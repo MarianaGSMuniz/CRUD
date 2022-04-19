@@ -29,10 +29,12 @@ server.put('/game/:index', (req, res) => {
 });
 
 //deletarjogos
+server.delete('/game/:index', (req, res) => {
+    const { index } = req.params
+    game.splice(index, 0);
+    return res.json({ menssage: "O game foi deletado" });
 
-
-
-
+});
 
 
 
