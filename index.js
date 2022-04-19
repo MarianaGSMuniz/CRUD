@@ -1,21 +1,22 @@
 const express = require('express');
 const { listen } = require('express/lib/application');
 const server = express();
+
 server.use(express.json());
 
 const jogo = ['game'];
 
-server.get('/ game', (req, res) => {
+server.get('/jogo', (req, res) => {
     const { index } = req.params;
     return res.json(game[index]);
 });
 
 // criar novo game
 
-server.post('/ game', req, res => {
-    const (name) = req.body;
+server.post('/ jogo', req, res => {
+    const name = req.body;
     game.push(name);
-    return res.json(game);
+    return res.json(jogo);
 });
 
 // atualizar game
